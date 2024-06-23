@@ -1,0 +1,59 @@
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <script defer type="text/javascript" src="script.js"></script>
+        <title>Weather Dashboard</title>
+        <link rel="icon" href="assets/images/10d@2x.png" type="image/png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="page-container">
+            <header><h1>Weather Dashboard</h1></header>
+            <main>
+                <!-- The Modal -->
+                <div id="modal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Raw Data:</h3>
+                        <p id="modal-text"></p>
+                    </div>
+                </div>
+                <div class="flex-item-15">
+                    <h2>Search for a city</h2>
+                    <input id="city-input" type="text" placeholder="Enter a city name..."/><br/>
+                    <button id="use-my-location"><img src="assets/svgs/pin.svg" height="15px" class="filter-light-blue"/></button>
+                    <div id="error-message"></div>
+                    <button id="search" class="search-button left-nav-button">Search</button>
+                    <hr />
+                    <ul id="search-history"></ul>
+                </div>
+                <div class="flex-item-85">
+                    <div id="weather-content">
+                        <div id="city-summary">
+                            <h1 id="city-name"></h1>
+                            <hr />
+                            <h3>Currently:</h3>
+                            <div id="city-weather-icon-container"></div>
+                            <p id="city-temp"></p>
+                            <p id="city-wind"></p>
+                            <p id="city-humidity"></p>
+                        </div>
+                        <div id="five-day-forecast">
+                            <h3>5-Day Forecast:</h3>
+                            <div id="forecast-content">
+                                <div id="day-1" data-day="0" class="forecast-item"></div>
+                                <div id="day-2" data-day="1" class="forecast-item"></div>
+                                <div id="day-3" data-day="2" class="forecast-item"></div>
+                                <div id="day-4" data-day="3" class="forecast-item"></div>
+                                <div id="day-5" data-day="4" class="forecast-item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer id="footer"></footer>
+        </div>
+    </body>
+</html>

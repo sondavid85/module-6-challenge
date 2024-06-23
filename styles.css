@@ -1,0 +1,237 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9f1f7;
+}
+header>h1, #footer {
+    color: #fff;
+}
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex-grow: 1;
+    padding: 1em;
+    display: flex;
+}
+header, footer {
+    text-align: center;
+    background-image: linear-gradient(to right, #abdbe3, #154c79);
+    padding: 1em;
+}
+.flex-item-15 {
+    flex: 0 0 15%;
+}
+.flex-item-85 {
+    flex: 0 0 85%;
+}
+#city-input {
+    margin: 1em 0 1em 0;
+    width: 100%;
+    padding: .5em;
+}
+.left-nav-button {
+    width: 100%;
+    border-radius: 5px;
+    margin: .5em 0 .5em 0;
+    padding: .5em;
+    background-color: #d1ebf0;
+    border: 1px #fff;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.left-nav-button:hover, .forecast-card:hover {
+    transform: scale(1.05);
+}
+.search-button {
+    background-color: #154c79;
+    color: #fff;
+}
+#search-history {
+    list-style: none;
+    padding-left: 0px;
+}
+button {
+    cursor: pointer;
+}
+#forecast-content {
+    display: flex;
+}
+.forecast-item {
+    flex: 0 0 20%;
+}
+.forecast-card {
+    margin: 0 1em 1em 0;
+    padding: .5em 2em 2em 2em;
+    border-radius: 10px;
+    background-color: #154c79;
+    color: #fff;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.forecast-card-list {
+    list-style: none;
+    padding-left: 0px;
+}
+.weather-description {
+    font-style: italic;
+}
+#error-message {
+    font-weight: bold;
+    color: #d9534f;
+}
+.hot {
+    color: red;
+}
+.cold {
+    color: #5bc0de;
+}
+.filter-light-blue {
+    filter: invert(21%) sepia(55%) saturate(1333%) hue-rotate(177deg) brightness(96%) contrast(91%);
+}
+#use-my-location {
+    border: none;
+    float: right;
+    cursor: pointer;
+}
+#city-weather-icon-container {
+    display: flex;
+    width: 100%;
+}
+#city-weather-img {
+    width: 100px;
+    background-color: #99c5cc;
+    border-radius: 10px;
+}
+hr {
+    border: 1px solid lightgrey;
+}
+#weather-content {
+    margin-left: 2em;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) { /* Tablets and up */
+    .flex-item-15 {
+        flex: 0 0 15%;
+    }
+    .flex-item-85 {
+        flex: 0 0 85%;
+    }
+    #weather-content {
+        border-left: 2px solid lightgrey;
+        padding-left: 1em;
+    }
+    #forecast-content {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap in smaller views */
+    }
+    .forecast-item {
+        flex: 0 0 50%; /* Allows items to grow and shrink */
+    }
+}
+@media (min-width: 1200px) { /* Tablets and up */
+    .flex-item-15 {
+        flex: 0 0 15%;
+    }
+    .flex-item-85 {
+        flex: 0 0 85%;
+    }
+    #forecast-content {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap in smaller views */
+    }
+    .forecast-item {
+        flex: 1 1 20%; /* Allows items to grow and shrink */
+    }
+}
+@media (max-width: 768px) { /* Mobile devices */
+    main {
+        flex-direction: column; /* Stack the main content on smaller screens */
+    }
+    #forecast-content {
+        flex-direction: column; /* Stack forecast items on smaller screens */
+    }
+    .forecast-item {
+        margin-bottom: 1em; /* Add some space between stacked items */
+    }
+    #city-summary {
+        text-align: center;
+    }
+    #city-weather-icon-container {
+        justify-content: center;
+    }
+    .search-button, .history {
+        padding: 2em;
+    }
+    h2 {
+        text-align: center;
+    }
+}
+
+/* @media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: black;
+        color: white;
+    }
+    h1, #footer {
+        color: black;
+    }
+    #use-my-location {
+        background-color: black;
+    }
+    .filter-light-blue {
+        filter: invert(91%) sepia(93%) saturate(27%) hue-rotate(253deg) brightness(106%) contrast(100%);
+    }
+} */
+
+/*modal*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #modal-text {
+    position: relative;
+    left: 40%;
+  }
+  .delete-history {
+    float: right;
+  }
